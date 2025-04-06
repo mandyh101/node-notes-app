@@ -1,5 +1,11 @@
 import { insertDB, saveDB, getDB } from "./db";
 
+/**
+ * Adds a new note to the database.
+ * @param {string} note The content of the note to add.
+ * @param {string[]} tags The tags to add to the note.
+ * @returns {Promise<Object>} The newly added note.
+ */
 const newNote = async(note, tags) => {
   const newNote = {
     id: Date.now(),
@@ -11,17 +17,32 @@ const newNote = async(note, tags) => {
   return newNote
 }
 
+/**
+ * Retrieves all notes from the database.
+ * @returns {Promise<Object[]>} A promise that resolves to an array of note objects.
+ */
+
 export const getAllNotes = async() => {
   //destructure the returned db object to just get the notes
   const {notes} = await getDB();
   return notes
 }
 
+/**
+ * Searches all notes in the database by content.
+ * @param {string} filter The string to search for in the note content.
+ * @returns {Promise<Object[]>} A promise that resolves to an array of note objects that match the filter.
+ */
 export const findNotes = async(filter) => {
   const {notes} = await getDB();
   return notes.filter(note => note.content.toLowerCase().includes(filter))
 }
 
+/**
+ * Removes a note from the database.
+ * @param {number} id The id of the note to remove.
+ * @returns {Promise<Object[]|undefined>} A promise that resolves to an array of remaining note objects if the note existed, or undefined if the note didn't exist.
+ */
 export const removeNote = async(id) => {
   //first get all the notes in js array
   const {notes} = await getAllNotes();
@@ -39,4 +60,8 @@ export const removeNote = async(id) => {
   }
 }
 
+/**
+ * Removes all notes from the database.
+ * @returns {Promise<Object>}
+ */
 export const removeAllNotes = () => saveDB({notes: []})
