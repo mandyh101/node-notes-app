@@ -8,3 +8,4 @@ Run `npm link` to install the notes-app cli in this project inside the bin folde
 ## Commands
 Once linked, you can begin using the CLI with `notes-app` as your prefix. e.g. running `notes-app` in the terminal will execute your javascipt file with node.
 
+`notes-app --help` to see a list of available commands
