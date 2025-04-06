@@ -11,5 +11,10 @@ yargs(hideBin(process.argv))
   }, (argv) =>{
     console.info(argv.note)
   })
+  .option('tag', {
+    alias: 't',
+    type: 'string',
+    description: 'Tags to add to the note'
+  })
   .demandCommand(1)
   .parse()
