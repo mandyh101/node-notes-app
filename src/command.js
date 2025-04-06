@@ -1,7 +1,17 @@
 // code for the CLI
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
-import { newNote } from "./notes.js";
+import { getAllNotes, newNote } from "./notes.js";
+
+//helper function to list our notes in the console
+const listNotes = notes => {
+  notes.forEach(({id, content, tags}) => {
+    console.log('id: ', id);
+    console.log('content: ', content);
+    console.log('tags: ', tags);
+    console.log('/n');
+  })
+}
 
 yargs(hideBin(process.argv))
   .command('new <note>', 'Create a new note', yargs => {
@@ -19,9 +29,10 @@ yargs(hideBin(process.argv))
     type: 'string',
     description: 'Tags to add to the note'
   })
-  // .command('all', 'get all notes', () => {}, async(argv) => {
-  //   // WIP
-  // })
+  .command('all', 'get all notes', () => {}, async(argv) => {
+    const notes = await getAllNotes();
+    listNotes(notes);
+  })
   // .command('find <filter>', 'get matching notes', yargs => {
   //   return yargs.positional('filter', {
   //     type: 'string',
