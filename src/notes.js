@@ -1,4 +1,4 @@
-import { insertDB, saveDB, getDB } from "./db";
+import { insertDB, saveDB, getDB } from "./db.js";
 
 /**
  * Adds a new note to the database.
@@ -6,7 +6,7 @@ import { insertDB, saveDB, getDB } from "./db";
  * @param {string[]} tags The tags to add to the note.
  * @returns {Promise<Object>} The newly added note.
  */
-const newNote = async(note, tags) => {
+export const newNote = async(note, tags) => {
   const newNote = {
     id: Date.now(),
     content: note,
