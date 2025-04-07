@@ -43,10 +43,10 @@ export const findNotes = async (filter) => {
  * @param {number} id The id of the note to remove.
  * @returns {Promise<Object[]|undefined>} A promise that resolves to an array of remaining note objects if the note existed, or undefined if the note didn't exist.
  */
-export const removeNote = async (id) => {
+export const removeNote = async (id, getAllNotesFn) => {
   
-  //first get all the notes in js array
-  const notes = await getAllNotes();
+  //first get all the notes in js array using the passed in function
+  const notes = await getAllNotesFn();
   //then check with find if we have a note that matches the given id
   const match = await notes.find(note => note.id === id);
   // if we do then use filter to create a new array with the matching nte filtered out
