@@ -1,3 +1,18 @@
 {
-  "notes": []
+  "notes": [
+    {
+      "id": "1743988936564",
+      "content": "clean kitchen",
+      "tags": [
+        "personal"
+      ]
+    },
+    {
+      "id": "1743988944385",
+      "content": "Submit technical test",
+      "tags": [
+        "work"
+      ]
+    }
+  ]
 }
