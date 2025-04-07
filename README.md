@@ -1,6 +1,11 @@
 # node-notes-app
 
-A CLI based Note taking app built with Node.js
+A CLI based Note taking app built with Node.js.
+
+## Learning objectives
+
+- [x] node.js fundamentals
+- [x] basic vanilla server fundamentals
 
 ## Getting started
 
@@ -20,3 +25,10 @@ Once linked, you can begin using the CLI with `notes-app` as your prefix. e.g. r
 - `notes-app clean` : deletes all notes
 - `notes-app web`+ port: launches web interface for viewing notes
 - `notes-app web` to launch the server and view notes in web interface (option to pass a port arg otherwise defualts to port 3001: http://localhost:3001 )
+
+## Todos
+
+- add css to style notes
+- implement ts with node
+- replace vanilla server with express
+- replace fs db with prisma db
