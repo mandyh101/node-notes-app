@@ -8,10 +8,6 @@ Run `npm link` to install the notes-app cli in this project inside the bin folde
 
 - type `which notes-app` to confirm you have access to the notes-app cli in your bin folder.
 
-### start the server
-
-`npm run start`
-
 ### CLI Commands
 
 Once linked, you can begin using the CLI with `notes-app` as your prefix. e.g. running `notes-app` in the terminal will execute your javascipt file with node.
@@ -23,3 +19,4 @@ Once linked, you can begin using the CLI with `notes-app` as your prefix. e.g. r
 - `notes-app remove`+ id : delete a note by id
 - `notes-app clean` : deletes all notes
 - `notes-app web`+ port: launches web interface for viewing notes
+- `notes-app web` to launch the server and view notes in web interface (option to pass a port arg otherwise defualts to port 3001: http://localhost:3001 )
